@@ -182,8 +182,8 @@ python experiments/run_baselines.py \
 
 ## Benchmarks
 
-| Dataset | |Δ| | |P| | |N| | m | |Σ_R| | |Σ_C| | Source |
-|---------|-----|-----|-----|---|-------|-------|--------|
+| Dataset | Domain | Pos | Neg | m | Roles | Concepts | Source |
+|---------|-------:|----:|----:|--:|------:|---------:|--------|
 | Family | 202 | 42 | 39 | 81 | 6 | 19 | SML-Bench |
 | Mutagenesis | 5,631 | 125 | 63 | 188 | 12 | 38 | Srinivasan et al. 1996 |
 | Carcinogenesis | 22,372 | 182 | 116 | 298 | 18 | 52 | SML-Bench |
@@ -194,6 +194,8 @@ python experiments/run_baselines.py \
 | NCTRER | 7,413 | 78 | 72 | 150 | 9 | 37 | SML-Bench |
 | Premier League | 12,895 | 160 | 140 | 300 | 13 | 10 | SML-Bench |
 | Suramin | 482 | 11 | 5 | 16 | 3 | 46 | SML-Bench |
+
+Column definitions: Domain = number of individuals, Pos/Neg = positive/negative examples, m = total examples, Roles = number of role names (object properties), Concepts = number of concept names (classes).
 
 ## Hardware
 
