@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+.eggs/
+*.so
+results/
+tables/
+data/ontologies/
+*.wcnf
+.venv/
+.env

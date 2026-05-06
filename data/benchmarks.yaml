@@ -1,0 +1,103 @@
+# Benchmark dataset metadata.
+# Statistics are computed from the OWL ontology files.
+
+benchmarks:
+  - name: Family
+    source: SML-Bench
+    owl_file: family.owl
+    delta: 202
+    P: 42
+    N: 39
+    m: 81
+    sig_r: 6
+    sig_c: 19
+
+  - name: Mutagenesis
+    source: Srinivasan et al. 1996
+    owl_file: mutagenesis.owl
+    delta: 5631
+    P: 125
+    N: 63
+    m: 188
+    sig_r: 12
+    sig_c: 38
+
+  - name: Carcinogenesis
+    source: SML-Bench
+    owl_file: carcinogenesis.owl
+    delta: 22372
+    P: 182
+    N: 116
+    m: 298
+    sig_r: 18
+    sig_c: 52
+
+  - name: Semantic Bible
+    source: NCES suite
+    owl_file: semantic_bible.owl
+    delta: 733
+    P: 56
+    N: 44
+    m: 100
+    sig_r: 29
+    sig_c: 48
+
+  - name: Vicodi
+    source: NCES suite
+    owl_file: vicodi.owl
+    delta: 28654
+    P: 112
+    N: 88
+    m: 200
+    sig_r: 10
+    sig_c: 194
+
+  - name: Hepatitis
+    source: SML-Bench
+    owl_file: hepatitis.owl
+    delta: 592
+    P: 250
+    N: 250
+    m: 500
+    sig_r: 5
+    sig_c: 14
+
+  - name: Mammographic
+    source: SML-Bench
+    owl_file: mammographic.owl
+    delta: 961
+    P: 481
+    N: 480
+    m: 961
+    sig_r: 3
+    sig_c: 19
+
+  - name: NCTRER
+    source: SML-Bench
+    owl_file: nctrer.owl
+    delta: 7413
+    P: 78
+    N: 72
+    m: 150
+    sig_r: 9
+    sig_c: 37
+
+  - name: Premier League
+    source: SML-Bench
+    owl_file: premier_league.owl
+    delta: 12895
+    P: 160
+    N: 140
+    m: 300
+    sig_r: 13
+    sig_c: 10
+
+  - name: Suramin
+    source: SML-Bench
+    owl_file: suramin.owl
+    delta: 482
+    P: 11
+    N: 5
+    m: 16
+    sig_r: 3
+    sig_c: 46

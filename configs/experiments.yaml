@@ -1,0 +1,76 @@
+# Experiment configuration for vocabulary-sensitive concept fitting.
+# All parameters match the paper's experimental setup.
+
+hardware:
+  cpu: "Intel Xeon Gold 6248R (3.0 GHz)"
+  ram: "256 GB"
+  os: "Ubuntu 22.04"
+  timeout: 600  # seconds
+
+solvers:
+  open-wbo:
+    version: "2.1"
+    algorithm: "OLL (linear search)"
+    binary: "solvers/open-wbo"
+  rc2:
+    version: "PySAT 0.1.8.dev4"
+    algorithm: "Core-guided with stratification"
+    interface: "python"
+  maxcdcl:
+    version: "2023"
+    algorithm: "Branch-and-bound with CDCL"
+    binary: "solvers/maxcdcl"
+
+datasets:
+  original:
+    - {name: "Family",        owl: "family.owl",         sigR: 6,  sigC: 19}
+    - {name: "Mutagenesis",   owl: "mutagenesis.owl",    sigR: 12, sigC: 38}
+    - {name: "Carcinogenesis", owl: "carcinogenesis.owl", sigR: 18, sigC: 52}
+  nces_suite:
+    - {name: "Semantic Bible", owl: "semantic_bible.owl", sigR: 29, sigC: 48}
+    - {name: "Vicodi",         owl: "vicodi.owl",         sigR: 10, sigC: 194}
+  sml_bench:
+    - {name: "Hepatitis",      owl: "hepatitis.owl",      sigR: 5,  sigC: 14}
+    - {name: "Mammographic",   owl: "mammographic.owl",   sigR: 3,  sigC: 19}
+    - {name: "NCTRER",         owl: "nctrer.owl",         sigR: 9,  sigC: 37}
+    - {name: "Premier League", owl: "premier_league.owl", sigR: 13, sigC: 10}
+    - {name: "Suramin",        owl: "suramin.owl",        sigR: 3,  sigC: 46}
+
+experiments:
+  table2:  # Main text preprocessing
+    datasets: [Family, Mutagenesis, Carcinogenesis]
+    k_values: [3, 5, 7]
+    t: 0
+    solvers: [open-wbo, rc2, maxcdcl]
+    runs: 5
+
+  table6:  # Full benchmark preprocessing
+    datasets: all
+    k_values: [3, 5, 7, 9, 11]
+    t: 0
+    solvers: [open-wbo]
+    runs: 5
+
+  table7:  # t-ablation
+    datasets: all
+    k: 5
+    t_values: [0, 2, 5, 10]
+    solvers: [open-wbo]
+    runs: 5
+
+  table8:  # Depth-wise reachability
+    datasets: all
+    max_depth: 6
+
+  table9:  # Scalability
+    datasets: all
+    k: 5
+    fractions: [0.2, 0.4, 0.6, 0.8, 1.0]
+    runs: 5
+
+  tables10_11:  # Baseline comparison
+    datasets: all
+    k: 7
+    t: 0
+    baselines: [CELOE, OCEL, EvoLearner, NCES, NCES2, CLIP, DRILL, ECII]
+    timeout: 300

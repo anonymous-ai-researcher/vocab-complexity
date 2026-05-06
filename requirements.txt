@@ -1,0 +1,8 @@
+python-sat>=0.1.8
+owlapy>=0.2.0
+ontolearn>=0.10.0
+pyyaml>=6.0
+numpy>=1.24
+scipy>=1.10
+pandas>=2.0
+tqdm>=4.65
